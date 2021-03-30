@@ -43,9 +43,12 @@ public class FilesFormats {
                 .option("quote", "\"")
                 .load(CSV_PATH_RESOURCES);
 
+
+        LOGGER.info("PRINTING COMPLEX CSV RESULTS:");
         //Print csv files load results
         csvDf.show();
 
+        LOGGER.info("COMPLEX CSV SCHEMA");
         //Print the schema
         csvDf.printSchema();
 
@@ -57,7 +60,9 @@ public class FilesFormats {
                 .load(JSON_PATH_RESOURCES);
 
         //Show and print schema
+        LOGGER.info("PRINTING JSON READ RESULTS:");
         jsonDf.show();
+        LOGGER.info("JSON SCHEMA");
         jsonDf.printSchema();
 
         /** READ XML FILE **/
@@ -66,7 +71,9 @@ public class FilesFormats {
                 .load(XML_PATH_RESOURCES);
 
         //Show and print schema
+        LOGGER.info("PRINTING XML READ RESULTS:");
         xmlDf.show();
+        LOGGER.info("XML SCHEMA");
         xmlDf.printSchema();
 
         /** READ TXT FILE **/
@@ -74,6 +81,7 @@ public class FilesFormats {
                 .load(TXT_PATH_RESOURCES);
 
         //Show and print schema
+        LOGGER.info("PRINTING TEXT READ RESULTS:");
         textDf.show();
 
         /** READ PARQUET FILE **/
@@ -81,7 +89,9 @@ public class FilesFormats {
                 .load(PARQUET_PATH_RESOURCES);
 
         //Display couple of records and schema
+        LOGGER.info("PRINTING PARQUET READ RESULTS:");
         parquetDf.show(5);
+        LOGGER.info("PARQUET SCHEMA");
         parquetDf.printSchema();
 
 
