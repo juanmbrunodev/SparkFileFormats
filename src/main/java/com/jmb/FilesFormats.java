@@ -1,5 +1,6 @@
 package com.jmb;
 
+import org.apache.spark.SparkConf;
 import org.apache.spark.sql.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,9 +25,12 @@ public class FilesFormats {
 
     private void init() throws Exception {
 
+        SparkConf appConfig = new SparkConf().set("spark.testing.memory", "900000000");
+
         //Create the Spark Session
         SparkSession session = SparkSession.builder()
                 .appName("SparkFileFormats")
+                .config(appConfig)
                 .master("local").getOrCreate();
 
         //Ingest data from a complex CSV file into a DataFrame
